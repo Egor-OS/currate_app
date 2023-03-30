@@ -20,7 +20,6 @@ class RowCurrencyCheckboxWidget extends StatelessWidget {
       onChanged: (value) {
         rateListController.switchAvailableCurrencies(currencyName, value!);
       },
-      secondary: const Icon(Icons.hourglass_empty),
     ));
   }
 }
