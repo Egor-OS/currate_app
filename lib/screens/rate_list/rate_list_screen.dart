@@ -28,16 +28,16 @@ class RateListScreen extends StatelessWidget {
       body: FutureBuilder(
         future: rateListController.getRates(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if (snapshot.connectionState != ConnectionState.done) {
             return const Center(
               child: CircularProgressIndicator(),
             );
           }
           if (snapshot.hasError) {
-            return Center(
-              child: Text(snapshot.error.toString()),
-            );
-          }
+              return Center(
+                child: Text(snapshot.error.toString()),
+              );
+            }
           return RateCurrentListBuilderWidget(
             listCurrencies: rateListController.ratesList,
             rateListController: rateListController,
