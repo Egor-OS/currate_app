@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'currate_app.dart';
+
+import 'screens/currate_app.dart';
 
 void main() {
-  runApp(const CurrateApp());
+  runApp(CurrateApp());
 }
